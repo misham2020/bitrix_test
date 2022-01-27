@@ -215,7 +215,7 @@ class CardsListComponent extends CBitrixComponent
                 'id' => 'CARD_TYPE',
                 'name' => Loc::getMessage('YLAB.CARD.LIST.CLASS.TYPE'),
                 'default' => true,
-                'sort' => $this->cardSecret,
+                'sort' => 'PROPERTY_CARD_TYPE',
             ],
             [
                 'id' => 'CARD_SECRET',
