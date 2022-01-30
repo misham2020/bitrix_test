@@ -15,16 +15,7 @@
         'ENABLE_LABEL' => true
     ],
     $component
-);
-//echo "<br>";
-//echo "<br>";
-//echo "<br>";
-//echo "<br>";
-//echo "<br>";
-//echo "<pre>";
-//print_r($arResult);
-//echo "<pre>";
-?>
+); ?>
 
 <div class="transport-action-bar">
     <a href="" class="ui-btn ui-btn-primary ui-btn-icon-add"
@@ -32,9 +23,9 @@
         <?= $arResult['BUTTONS']['ADD']['NAME'] ?>
     </a>
 </div>
-<br><br><br><br><br><br>
+
 <div class="">
-    <?
+    <?php
     $APPLICATION->IncludeComponent(
         'bitrix:main.ui.grid',
         '',
@@ -68,29 +59,7 @@
             'ALLOW_HORIZONTAL_SCROLL' => true,
             'ALLOW_SORT' => true,
             'ALLOW_PIN_HEADER' => true,
-            'AJAX_OPTION_HISTORY' => 'N',
-            'ACTION_PANEL' => [
-                'GROUPS' => [
-                    'TYPE' => [
-                        'ITEMS' => [
-
-                            [
-                                'ID' => 'edit',
-                                'TYPE' => 'BUTTON',
-                                'TEXT' => 'Редактировать',
-                                'CLASS' => 'icon edit',
-                                'ONCHANGE' => ''
-                            ],
-                            [
-                                'ID' => 'delete',
-                                'TYPE' => 'BUTTON',
-                                'TEXT' => 'Удалить',
-                                'CLASS' => 'icon remove',
-                                'ONCHANGE' => ''
-                            ],
-                        ],
-                    ]
-                ],
-            ],
-        ]); ?>
+            'AJAX_OPTION_HISTORY' => 'N'
+        ]
+    ); ?>
 </div>

@@ -17,10 +17,5 @@
     "psr-4": {
       "Ylab\\": "app/"
     }
-  },
-  "config": {
-    "allow-plugins": {
-      "composer/installers": true
-    }
   }
 }
