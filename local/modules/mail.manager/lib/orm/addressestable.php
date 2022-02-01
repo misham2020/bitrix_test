@@ -9,7 +9,7 @@ use Bitrix\Main\Localization\Loc;
  * Class ProfilesTable
  * @package app\Orm
  */
-class EmailsTable extends Entity\DataManager
+class AddressesTable extends Entity\DataManager
 {
     /**
      * Returns DB table name for entity.
@@ -17,7 +17,7 @@ class EmailsTable extends Entity\DataManager
      */
     public static function getTableName()
     {
-        return 'y_emails';
+        return 'y_addresses';
     }
 
     /**
@@ -33,19 +33,23 @@ class EmailsTable extends Entity\DataManager
                 'autocomplete' => true,
                 'title' => 'ID',
             ]),
-            new Entity\IntegerField('ADDRESS_ID'),
-            new Entity\ReferenceField(
-                'ADDRESS',
-                'Mail\Manager\Orm\AddressesTable',
-                ['=this.ADDRESS_ID' => 'ref.ID']
-            ),
-            new Entity\StringField('NAME', [
+            new Entity\StringField('CITY', [
                 'validation' => [__CLASS__, 'validateName'],
-                'title' => Loc::getMessage('YLAB_MAIL_MANAGER_PROFILE_NAME_FIELD'),
+                'title' => 'Город'/*Loc::getMessage('YLAB_ADDRESESS_CITY_FIELD')*/,
             ]),
-            new Entity\StringField('EMAIL', [
-                'title' => Loc::getMessage('YLAB_MAIL_MANAGER_PROFILE_EMAIL_FIELD'),
+            new Entity\StringField('STREET', [
+                'validation' => [__CLASS__, 'validateName'],
+                'title' => 'Улица'/*Loc::getMessage('YLAB_ADDRESESS_STREET_FIELD')*/,
             ]),
+            new Entity\StringField('HOUSE', [
+                'validation' => [__CLASS__, 'validateName'],
+                'title' => 'Дом'/* Loc::getMessage('YLAB_ADDRESESS_HOUSE_FIELD') */,
+            ]),
+            new Entity\StringField('FLAT', [
+                'validation' => [__CLASS__, 'validateName'],
+                'title' => 'Квартира'/*Loc::getMessage('YLAB_ADDRESESS_FLAT_FIELD')*/,
+            ]),
+
         ];
     }
 

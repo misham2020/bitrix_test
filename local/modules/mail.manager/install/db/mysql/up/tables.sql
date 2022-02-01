@@ -1,9 +1,15 @@
 CREATE TABLE IF NOT EXISTS `y_emails` (
-                    `ID` int(11) NOT NULL AUTO_INCREMENT,
-                    `NAME` varchar(255) NOT NULL,
-                    `EMAIL` varchar(255) NOT NULL,
-    'ADDRESS' => с таблоицей y_addresses
-                    PRIMARY KEY(`ID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+`ID` int(11) NOT NULL AUTO_INCREMENT,
+`NAME` varchar(255) NOT NULL,
+`EMAIL` varchar(255) NOT NULL,
+`ADDRESS_ID` int NOT NULL,
+PRIMARY KEY(`ID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
-Новая таблица "y_addresses".
+CREATE TABLE IF NOT EXISTS `y_addresses` (
+`ID` int(11) NOT NULL AUTO_INCREMENT,
+`CITY` varchar(255) NOT NULL,
+`STREET` varchar(255) NOT NULL,
+`HOUSE` varchar(255) NOT NULL,
+`FLAT` varchar(255) NOT NULL,
+PRIMARY KEY(`ID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

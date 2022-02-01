@@ -3,8 +3,8 @@
 namespace Mail\Manager;
 
 use Mail\Manager\Orm\EmailsTable;
+use Mail\Manager\Orm\AddressesTable;
 use Bitrix\Main\Localization\Loc;
-
 
 /**
  * Class Profile
@@ -25,12 +25,14 @@ class Profile
         $result['HEADER']['ID'] = Loc::getMessage('YLAB_MAIL_MANAGER_PROFILE_HEAD_ID');
         $result['HEADER']['NAME'] = Loc::getMessage('YLAB_MAIL_MANAGER_PROFILE_HEAD_NAME');
         $result['HEADER']['EMAIL'] = Loc::getMessage('YLAB_MAIL_MANAGER_PROFILE_HEAD_EMAIL');
+        $result['HEADER']['ADDRESS.CITY'] = Loc::getMessage('YLAB_MAIL_MANAGER_PROFILE_HEAD_CITY');
 
         $arParams = [
             'select' => [
                 'ID',
                 'NAME',
-                'EMAIL'
+                'EMAIL',
+                'ADDRESS.CITY'
             ]
         ];
 
@@ -41,7 +43,7 @@ class Profile
                 $result['PROFILES'][] = $arProfile;
             }
         }
-
+       // echo '<pre>', print_r($result), '</pre>';
         return $result;
     }
 
@@ -64,24 +66,4 @@ class Profile
         return false;
     }
 
-    /**
-     * Добавляем профиль
-     */
-    public function addProfile($arFields)
-    {
-    }
-
-    /**
-     * Обновляем профиль
-     */
-    public function updateProfile($iProfileID, $arFields)
-    {
-    }
-
-    /**
-     * Удаляем профиль
-     */
-    public function deleteProfile($iProfileID)
-    {
-    }
 }
